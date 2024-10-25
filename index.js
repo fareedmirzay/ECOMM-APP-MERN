@@ -4,6 +4,8 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { cloud } from './cloud.js'; 
 import userRouter from './routes/userRoute.js';
+import productRouter from './routes/productRoute.js';
+
 dotenv.config();
 
 const app = express()
@@ -19,11 +21,13 @@ connectDB();
 cloud();
 
 //middlewares
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
 app.use(cors())
 
 //API 
 app.use('/api/user',userRouter)
+app.use("/api/product",productRouter)
 
 app.get('/', (req,res)=>{
     res.send('MY APIs IS WORKING JUST FINE')
