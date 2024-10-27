@@ -2,7 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import { cloud } from './cloud.js'; 
+import connectCloudinary from './cloud.js'
 import userRouter from './routes/userRoute.js';
 import productRouter from './routes/productRoute.js';
 
@@ -18,14 +18,15 @@ const connectDB = async () => {
     await mongoose.connect(process.env.MONGODB_URI)
 }
 connectDB();
-cloud();
+connectCloudinary()
+
+// cloud();
 
 //middlewares
-app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
 app.use(cors())
 
-//API 
+//APIs 
 app.use('/api/user',userRouter)
 app.use("/api/product",productRouter)
 
