@@ -9,7 +9,7 @@ import productRouter from './routes/productRoute.js';
 dotenv.config();
 
 const app = express()
-const PORT = process.env.port || 5090
+const PORT = process.env.port || 4055
 
 const connectDB = async () => {
     mongoose.connection.on("CONNECTED",() => {
@@ -20,7 +20,6 @@ const connectDB = async () => {
 connectDB();
 connectCloudinary()
 
-// cloud();
 
 //middlewares
 app.use(express.json())
