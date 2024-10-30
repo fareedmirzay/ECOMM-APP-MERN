@@ -1,6 +1,6 @@
 # Ecom-APP-AFG
 
-An eCommerce web application built using the MERN stack (MongoDB, Express, React, Node.js). The application provides users with the ability to view products, register/login, add products (for admins), and manage user sessions with JWT authentication.
+An eCommerce web application built using the MERN stack (MongoDB, Express, React, Node.js). The application provides users with the ability to view products, register/login, add products (for admins only), and manage user sessions with JWT authentication.
 
 ## Features
 
@@ -35,7 +35,7 @@ An eCommerce web application built using the MERN stack (MongoDB, Express, React
 
 - Node.js and npm
 - MongoDB database URI
-- Cloudinary account (for image uploads)
+- Cloudinary account for image uploads
 
 ### Installation
 

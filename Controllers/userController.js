@@ -16,7 +16,6 @@ const loginUser = async (req,res) => {
     try {
 
         const {email,password} = req.body;
-
         const user = await userModel.findOne({email})
 
         //checking if user already exits
@@ -99,4 +98,67 @@ const adminLogin = async (req, res) => {
         res.json({ success: false, message: error.message })
     }
 }
-export { loginUser,registerUser,adminLogin }
+
+
+// Function to list all users
+const listUsers = async (req, res) => {
+    try {
+        const users = await userModel.find({});
+        res.json({ success: true, users });
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: error.message });
+    }
+};
+
+
+// Function to get a single user
+const getUser = async (req, res) => {
+    try {
+        const { userId } = req.body;
+        const user = await userModel.findById(userId);
+        if (!user) {
+            return res.json({ success: false, message: "User not found" });
+        }
+        res.json({ success: true, user });
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: error.message });
+    }
+};
+
+// Function to update user details
+const updateUser = async (req, res) => {
+    try {
+        const { userId, name, email, password } = req.body;
+
+        const updatedData = {};
+        if (name) updatedData.name = name;
+        if (email) updatedData.email = email;
+        if (password) {
+            const salt = await bcrypt.genSalt(10);
+            updatedData.password = await bcrypt.hash(password, salt);
+        }
+
+        const updatedUser = await userModel.findByIdAndUpdate(userId, updatedData, { new: true });
+        res.json({ success: true, message: "User updated", user: updatedUser });
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: error.message });
+    }
+};
+
+// Function to delete a user
+const deleteUser = async (req, res) => {
+    try {
+        const { userId } = req.body;
+        await userModel.findByIdAndDelete(userId);
+        res.json({ success: true, message: "User deleted" });
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: error.message });
+    }
+};
+
+
+export { loginUser,registerUser,adminLogin,deleteUser,updateUser,getUser,listUsers }
