@@ -3,14 +3,14 @@ An eCommerce web application built using the MERN stack (MongoDB, Express, React
 
 ## Features
 
-**User Authentication**: Secure login and registration with JWT.
-**Admin Management**: Admins can add, update, and remove products.
-**Product Catalog**: Browse a list of products and view detailed product pages.
-**Shopping Cart**: Add items to a cart with quantity and size options.
-**Order Management**: Place orders and view order history.
-**Image Uploading**: Uses Cloudinary to store product images.
-**Search Functionality**: Easily search for products in the catalog.
-**Contact Information**: Accessible contact details for support.
+- **User Authentication**: Secure login and registration with JWT.
+- **Admin Management**: Admins can add, update, and remove products.
+- **Product Catalog**: Browse a list of products and view detailed product pages.
+- **Shopping Cart**: Add items to a cart with quantity and size options.
+- **Order Management**: Place orders and view order history.
+- **Image Uploading**: Uses Cloudinary to store product images.
+- **Search Functionality**: Easily search for products in the catalog.
+- **Contact Information**: Accessible contact details for support.
 
 
 
@@ -20,7 +20,7 @@ An eCommerce web application built using the MERN stack (MongoDB, Express, React
 
 - React Components: Manages views for the home page, product catalog, product details, shopping cart, and contact page.
 - State Management: Uses Context API and hooks to handle state.
-**Styling: Styled with Tailwind CSS and React Toastify for notifications.
+- Styling: Styled with Tailwind CSS and React Toastify for notifications.
 
 **Backend
 
