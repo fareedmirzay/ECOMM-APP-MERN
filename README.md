@@ -1,4 +1,4 @@
-*******************Ecom-APP-AFG***********************8
+*******************Ecom-APP-AFG*********************
 An eCommerce web application built using the MERN stack (MongoDB, Express, React, Node.js). This application allows users to view products, register/login, add products to a cart, and manage orders with secure JWT authentication. Admins have control over product management, while users enjoy a seamless shopping experience with product browsing, cart functionality, and order tracking.
 
 ****Features
